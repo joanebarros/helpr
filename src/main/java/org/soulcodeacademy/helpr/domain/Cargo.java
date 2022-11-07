@@ -1,0 +1,57 @@
+package org.soulcodeacademy.helpr.domain;
+
+import javax.persistence.*;
+
+@Entity // Transformar a classe em uma entidade/tabela no banco
+public class Cargo { // Nome da tabela = Cargo
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_ICREMENT
+    private Integer idCargo; // Sera a chave primaria da tabela
+    @Column(nullable = false, length = 50) // NOT NULL de no maximo 50 caracteres
+    private String nome;
+    @Column(nullable = false, length = 120) // NOT NULL de no maximo 120 caracteres
+    private String descricao;
+    @Column(nullable = false) // @Colum serve para custumizar a coluna
+    private Double salario;
+
+    public Cargo() {} // A ORM ira usar este construtor em conjunto dos getters/settrs
+
+    public Cargo(Integer idCargo, String nome, String descricao, Double salario) {
+        this.idCargo = idCargo;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.salario = salario;
+    }
+
+    public Integer getIdCargo() {
+        return idCargo;
+    }
+
+    public void setIdCargo(Integer idCargo) {
+        this.idCargo = idCargo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(Double salario) {
+        this.salario = salario;
+    }
+}
