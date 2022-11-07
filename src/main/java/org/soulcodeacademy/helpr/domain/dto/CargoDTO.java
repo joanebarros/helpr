@@ -1,4 +1,4 @@
-package org.soulcodeacademy.helpr.domain.dpo;
+package org.soulcodeacademy.helpr.domain.dto;
 
 // DTO -> Ogejeto de tranferencia de dados.
 // É util para validarmos as informações tranferidas pelo cliente
